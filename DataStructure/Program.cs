@@ -15,6 +15,12 @@ public class UnOrderedLinkedList<T> where T : IComparable<T>
         UnOrderedLinkedList<T> emptyList = new UnOrderedLinkedList<T>();
         return emptyList;
     }
+    public bool IsEmpty()
+    {
+        if (head == null)
+            return true;
+        return false;
+    }
 
     public void Append(T data)
     {
@@ -113,6 +119,38 @@ public class UnOrderedLinkedList<T> where T : IComparable<T>
             index++;
         }
         return -1;
+    }
+    public void Remove(T data)
+    {
+        if (IsEmpty())
+            return;
+        if (head.data.CompareTo(data) == 0)
+            head = head.next;
+        else
+        {
+            Node<T> temp = head;
+            while (temp != null)
+            {
+                if (temp.next.data.CompareTo(data) == 0)
+                {
+                    temp.next = temp.next.next;
+                    return;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
+    public int Size()
+    {
+        int size = 0;
+        Node<T> temp = head;
+        while (temp != null)
+        {
+            size++;
+            temp = temp.next;
+        }
+        return size;
     }
 }
 
