@@ -1,6 +1,6 @@
 ﻿namespace MyDataStructureLibrary;
 
-public class StackList<T> : LinkedList<T> where T : IComparable
+public class StackList<T> : MyLinkedList<T> where T : IComparable
 {
     public static StackList<T> Stack()
     {
