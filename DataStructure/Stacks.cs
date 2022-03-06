@@ -15,4 +15,13 @@ public class StackList<T> : LinkedList<T> where T : IComparable
     {
         Add(data);
     }
+    public T Peek()
+    {
+        return head.data;
+    }
+
+    public new void Pop()
+    {
+        base.Pop();
+    }
 }
