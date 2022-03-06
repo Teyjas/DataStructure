@@ -1,20 +1,29 @@
 ﻿namespace MyDataStructureLibrary;
 
-public class UnOrderedLinkedList<T> where T : IComparable<T>
+
+/// <summary>
+/// This is the base abstract class for all generic data structure lists
+/// </summary>
+public abstract class LinkedList<T> where T : IComparable
 {
-    public Node<T> head;
+    // Declared Node Object
+    protected Node<T> head;
 
-
-    public UnOrderedLinkedList()
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UnOrderedLinkedList{T}"/> class.
+    /// </summary>
+    public LinkedList()
     {
         head = null;
     }
-    public UnOrderedLinkedList<T> List()
-    {
-        UnOrderedLinkedList<T> emptyList = new UnOrderedLinkedList<T>();
-        return emptyList;
-    }
+
+    /// <summary>
+    /// Determines whether the list is empty.
+    /// </summary>
+    /// <returns>
+    ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+    /// </returns>
+
     public bool IsEmpty()
     {
         if (head == null)
@@ -141,6 +150,10 @@ public class UnOrderedLinkedList<T> where T : IComparable<T>
         }
     }
 
+    /// <summary>
+    /// Returns the size of the list(No of elements in list)
+    /// </summary>
+    /// <returns></returns>
     public int Size()
     {
         int size = 0;
