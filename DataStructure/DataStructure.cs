@@ -1,13 +1,14 @@
-﻿using CustomDataStructure;
+﻿using MyDataStructureLibrary;
 
-// String used to test the word frequency count of the para
-string testString;
-testString = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+Console.Title = "My Data Structure";
+Console.WriteLine("==========Custom Data Structure==========");
 
-StringOperation wordOperation = new(testString);
+BinarySearchTree<int> intTree = new BinarySearchTree<int>();
 
-Console.WriteLine($"Frequency of 'Paranoid': {wordOperation.GetVal("paranoid").Count}");
+intTree.Add(56);
+intTree.Add(30);
+intTree.Add(70);
 
-Console.WriteLine(wordOperation.GetAvoidedString());
+intTree.Display();
 
 Console.ReadKey();
