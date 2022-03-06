@@ -58,4 +58,14 @@ public class BinaryNode<T> where T : IComparable
         else
             left = new(data);
     }
+    /// <summary>
+    /// Returns the size of current node along with left and right
+    /// </summary>
+    public static int Size(BinaryNode<T> node)
+    {
+        if (node == null)
+            return 0;
+        return Size(node.left) + 1 + Size(node.right);
+    }
 }
+
